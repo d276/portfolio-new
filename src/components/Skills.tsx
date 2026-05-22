@@ -50,6 +50,13 @@ export const Skills: React.FC = () => {
         ? skillsData 
         : skillsData.filter(skill => skill.category === activeFilter);
 
+    const categoryLabels: Record<Skill['category'], string> = {
+        frontend: 'Frontend',
+        backend: 'Backend & APIs',
+        state: 'State & Fetching',
+        database: 'Databases & Tools'
+    };
+
     return (
         <section id="skills" className="skills section-padding section-alt-bg">
             <div className="container">
@@ -77,9 +84,11 @@ export const Skills: React.FC = () => {
                             className="skill-item reveal active"
                             data-category={skill.category}
                         >
-                            <div className="skill-header">
+                            <div className="skill-card-body">
+                                <span className={`skill-category-dot skill-dot-${skill.category}`}></span>
                                 <span className="skill-name">{skill.name}</span>
                             </div>
+                            <span className="skill-category-name">{categoryLabels[skill.category]}</span>
                         </div>
                     ))}
                 </div>

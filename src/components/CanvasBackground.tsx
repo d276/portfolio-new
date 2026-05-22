@@ -49,7 +49,7 @@ export const CanvasBackground: React.FC<CanvasBackgroundProps> = ({ theme }) => 
 
             update() {
                 if (!canvas) return;
-                
+
                 // Boundaries
                 if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
                 if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
@@ -121,7 +121,7 @@ export const CanvasBackground: React.FC<CanvasBackgroundProps> = ({ theme }) => 
                         const currentLineColor = lineColor
                             .replace('0.08', (alpha * 0.08).toString())
                             .replace('0.04', (alpha * 0.04).toString());
-                            
+
                         ctx.strokeStyle = currentLineColor;
                         ctx.lineWidth = 0.8;
                         ctx.stroke();

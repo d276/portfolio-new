@@ -9,7 +9,7 @@ export const About: React.FC = () => {
                     <span className="subtitle-badge">01. About Me</span>
                     <h2 className="section-title">My Journey & Expertise</h2>
                 </div>
-                
+
                 <div className="about-grid">
                     <div className="about-text-content reveal-left active">
                         <h3>Passionate about crafting clean, maintainable, and high-performance code.</h3>
@@ -50,7 +50,7 @@ export const About: React.FC = () => {
                                 </span>
                             </div>
                         </div>
-                        
+
                         <div className="metrics-grid">
                             <div className="metric-card">
                                 <span className="metric-num">4+</span>
@@ -66,7 +66,7 @@ export const About: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className="about-info-panel reveal-right active">
                         <div className="about-photo-wrapper">
                             <div className="about-photo-frame">

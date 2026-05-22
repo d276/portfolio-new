@@ -94,7 +94,7 @@ body {
 }
 
 .section-padding {
-    padding: 6.25rem 0;
+    padding: 4.5rem 0;
 }
 
 .section-alt-bg {
@@ -147,7 +147,7 @@ body {
 
 /* 4. Section Header Layout */
 .section-title-wrapper {
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.25rem;
     text-align: center;
 }
 
@@ -474,7 +474,7 @@ body {
 .hero-description {
     font-size: 1.1rem;
     color: var(--text-secondary);
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.75rem;
     max-width: 600px;
 }
 
@@ -778,11 +778,11 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
-    margin-top: 2rem;
-    margin-bottom: 2.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     border-top: 1px dashed var(--border-color);
     border-bottom: 1px dashed var(--border-color);
-    padding: 1.5rem 0;
+    padding: 1.25rem 0;
 }
 
 .about-detail-item {
@@ -825,7 +825,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
 }
 
 .metric-card {
@@ -965,7 +965,7 @@ body {
     justify-content: center;
     gap: 0.75rem;
     flex-wrap: wrap;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .filter-btn {
@@ -998,9 +998,15 @@ body {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 1.25rem;
-    text-align: center;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
     transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
 }
 
 .skill-item.hidden {
@@ -1015,11 +1021,53 @@ body {
     box-shadow: 0 4px 15px -3px var(--accent-glow);
 }
 
+.skill-card-body {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+}
+
+.skill-category-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.skill-dot-frontend {
+    background-color: var(--accent-primary);
+    box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.skill-dot-backend {
+    background-color: #10b981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+.skill-dot-state {
+    background-color: #8b5cf6;
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+}
+
+.skill-dot-database {
+    background-color: #f59e0b;
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
+}
+
 .skill-name {
     font-family: var(--font-heading);
     font-weight: 600;
     font-size: 0.95rem;
     color: var(--text-primary);
+}
+
+.skill-category-name {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    color: var(--text-muted);
 }
 
 /* 10. Experience Section */
@@ -1265,14 +1313,14 @@ body {
 
 .contact-info p {
     color: var(--text-secondary);
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     font-size: 1.05rem;
 }
 
 .contact-details-list {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 1.25rem;
 }
 
 .contact-detail-item {
@@ -1327,7 +1375,7 @@ body {
 .contact-form-wrapper {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    padding: 2.5rem;
+    padding: 2rem;
     border-radius: 20px;
     box-shadow: var(--card-shadow);
 }
@@ -1335,7 +1383,7 @@ body {
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 1.25rem;
 }
 
 .form-group {
@@ -1598,7 +1646,11 @@ body {
 
 @media (max-width: 768px) {
     .section-padding {
-        padding: 4.5rem 0;
+        padding: 3rem 0;
+    }
+    
+    .section-title-wrapper {
+        margin-bottom: 1.75rem;
     }
     
     .menu-toggle {
