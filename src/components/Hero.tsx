@@ -1,56 +1,121 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import dhawalPhoto from '../assets/dhawal.jpg';
+import { AnimatedCounter } from './AnimatedCounter';
 
 export const Hero: React.FC = () => {
+    const specialties = [
+        'Building Scalable Web Applications',
+        'Optimizing Real-Time Fintech Platforms',
+        'Designing High-Performance Frontend Architectures',
+        'Crafting Robust Databases & Security Rules'
+    ];
+    const [specialtyIdx, setSpecialtyIdx] = useState(0);
+    const [isFading, setIsFading] = useState(false);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIsFading(true);
+            setTimeout(() => {
+                setSpecialtyIdx((prev) => (prev + 1) % specialties.length);
+                setIsFading(false);
+            }, 300); // fade transition time
+        }, 4000);
+
+        return () => clearInterval(interval);
+    }, [specialties.length]);
+
     return (
-        <section id="home" className="container">
-            <div className="hero-content">
-                <div style={{ flex: 1.2 }}>
-                    <h1 className="hero-hello font-serif-italic">
-                        hello world
+        <section id="home" className="hero">
+            <div className="hero-content container">
+                <div className="hero-text-block">
+                    <span className="hero-badge reveal active">Available for new opportunities</span>
+                    <h1 className="hero-title reveal active">
+                        Hi, I'm <span className="gradient-text">Dhawal Deolasi</span>
                     </h1>
-                    <h2 className="hero-tagline">
-                        <span>
-                            I design 
-                            <span className="font-serif-italic" style={{ fontWeight: 400 }}> &amp; </span>
-                            craft beautiful websites for users, that solve your{' '}
-                            <span className="font-serif-italic" style={{ fontWeight: 400 }}>business tasks</span>
+                    <h2 className="hero-subtitle reveal active">
+                        <span className={`specialty-text ${isFading ? 'fade-out' : 'fade-in'}`}>
+                            {specialties[specialtyIdx]}
                         </span>
                     </h2>
-                </div>
-                
-                <div style={{ flex: 0.8, display: 'flex', flexDirection: 'column', gap: '1.5rem', justifyContent: 'center' }}>
-                    <p className="hero-description" style={{ margin: 0 }}>
-                        Hello, I'm <strong style={{ color: 'var(--text-primary)' }}>Dhawal Deolasi</strong>, a Software Engineer with{' '}
-                        <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>4+ years</span> of experience{' '}
-                        <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>developing and designing</span> web and mobile applications—specializing in real-time fintech architectures and robust frontend modules.
+                    <p className="hero-description reveal active">
+                        I am a Software Engineer with <strong>4+ years of professional experience</strong> specializing in high-performance frontend architectures, real-time data streaming (WebSockets), and robust database schemas.
                     </p>
+                    <div className="hero-cta reveal active">
+                        <a href="#projects" className="btn btn-primary">Explore My Work</a>
+                        <a 
+                            href="Dhawal_Deolasi_Fullstack_Developer.pdf" 
+                            download="Dhawal_Deolasi_Fullstack_Developer.pdf" 
+                            className="btn btn-secondary flex-center" 
+                            id="download-resume-hero"
+                        >
+                            <span>Download Resume</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="btn-icon">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div className="hero-graphics-block reveal active">
+                    <div className="profile-card">
+                        <div className="avatar-glow"></div>
+                        <div className="profile-box">
+                            <div className="profile-header">
+                                <div className="avatar-container">
+                                    <div className="avatar-wrapper">
+                                        <img src={dhawalPhoto} alt="Dhawal Deolasi" className="avatar-img" />
+                                        <div className="status-indicator" title="Available for new opportunities">
+                                            <span className="status-dot"></span>
+                                            <span className="status-pulse"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="profile-info-text">
+                                    <h3 className="profile-name">Dhawal Deolasi</h3>
+                                    <div className="profile-role-badge">Fullstack Developer</div>
+                                    <span className="profile-availability">Available for Work</span>
+                                </div>
+                            </div>
+                            
+                            <div className="profile-stats">
+                                <div className="p-stat-item">
+                                    <span className="p-stat-num">
+                                        <AnimatedCounter target={4} suffix="+" />
+                                    </span>
+                                    <span className="p-stat-label">Years Exp</span>
+                                </div>
+                                <div className="p-stat-item">
+                                    <span className="p-stat-num">
+                                        <AnimatedCounter target={10} suffix="+" />
+                                    </span>
+                                    <span className="p-stat-label">Projects</span>
+                                </div>
+                                <div className="p-stat-item">
+                                    <span className="p-stat-num">Indore</span>
+                                    <span className="p-stat-label">Location</span>
+                                </div>
+                            </div>
+
+                            <div className="profile-tech-section">
+                                <h4 className="tech-title">Core Expertise</h4>
+                                <div className="tech-tag-grid">
+                                    <span className="tech-tag-badge"><span className="tech-dot react"></span>React</span>
+                                    <span className="tech-tag-badge"><span className="tech-dot next"></span>Next.js</span>
+                                    <span className="tech-tag-badge"><span className="tech-dot ts"></span>TypeScript</span>
+                                    <span className="tech-tag-badge"><span className="tech-dot ws"></span>WebSockets</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div className="hero-actions" style={{ marginTop: '2.5rem' }}>
-                <a href="#projects" className="gradient-btn" style={{ transform: 'none' }}>
-                    <div className="gradient-btn-inner" style={{ background: 'var(--accent-gradient)', color: '#ffffff', padding: '0.625rem 1.5rem' }}>
-                        <span>See Projects</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style={{ marginLeft: '0.25rem' }}>
-                            <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                </a>
-
-                <a 
-                    href="Dhawal_Deolasi_Fullstack_Developer.pdf" 
-                    download="Dhawal_Deolasi_Fullstack_Developer.pdf" 
-                    className="gradient-btn"
-                >
-                    <div className="gradient-btn-inner" style={{ padding: '0.625rem 1.5rem' }}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style={{ marginRight: '0.25rem' }}>
-                            <path fillRule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625zM7.5 15a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 017.5 15zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H8.25z" clip-rule="evenodd" />
-                            <path d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z" />
-                        </svg>
-                        <span>Resume</span>
-                    </div>
-                </a>
-            </div>
+            <a href="#about" className="scroll-down-btn" aria-label="Scroll Down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+            </a>
         </section>
     );
 };
