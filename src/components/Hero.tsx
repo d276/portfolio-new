@@ -1,0 +1,116 @@
+import React from 'react';
+
+export const Hero: React.FC = () => {
+    return (
+        <section id="home" className="hero">
+            <div className="hero-content container">
+                <div className="hero-text-block">
+                    <span className="hero-badge reveal active">Available for new opportunities</span>
+                    <h1 className="hero-title reveal active">
+                        Hi, I'm <span className="gradient-text">Dhawal Deolasi</span>
+                    </h1>
+                    <h2 className="hero-subtitle reveal active">
+                        Building Scalable Web Applications & Real-Time Fintech Platforms
+                    </h2>
+                    <p className="hero-description reveal active">
+                        I am a Software Engineer with <strong>4+ years of professional experience</strong> specializing in high-performance frontend architectures, real-time data streaming (WebSockets), and robust database schemas.
+                    </p>
+                    <div className="hero-cta reveal active">
+                        <a href="#projects" className="btn btn-primary">Explore My Work</a>
+                        <a 
+                            href="Dhawal_Deolasi_Fullstack_Developer.pdf" 
+                            download="Dhawal_Deolasi_Fullstack_Developer.pdf" 
+                            className="btn btn-secondary flex-center" 
+                            id="download-resume-hero"
+                        >
+                            <span>Download Resume</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="btn-icon">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div className="hero-graphics-block reveal active">
+                    <div className="profile-card">
+                        <div className="avatar-glow"></div>
+                        <div className="profile-box">
+                            <div className="profile-header">
+                                <div className="avatar-container">
+                                    <div className="avatar-wrapper">
+                                        <svg className="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stopColor="var(--accent-primary)" />
+                                                    <stop offset="100%" stopColor="var(--accent-secondary)" />
+                                                </linearGradient>
+                                                <clipPath id="avatarClip">
+                                                    <circle cx="50" cy="50" r="48" />
+                                                </clipPath>
+                                            </defs>
+                                            <circle cx="50" cy="50" r="48" fill="none" stroke="url(#avatarGrad)" strokeWidth="2" />
+                                            <g clipPath="url(#avatarClip)">
+                                                <circle cx="50" cy="50" r="45" fill="rgba(10, 15, 29, 0.6)" />
+                                                {/* Cyber Grid background */}
+                                                <path d="M 10,0 L 10,100 M 20,0 L 20,100 M 30,0 L 30,100 M 40,0 L 40,100 M 50,0 L 50,100 M 60,0 L 60,100 M 70,0 L 70,100 M 80,0 L 80,100 M 90,0 L 90,100" stroke="rgba(99, 102, 241, 0.08)" strokeWidth="0.5" />
+                                                <path d="M 0,10 L 100,10 M 0,20 L 100,20 M 0,30 L 100,30 M 0,40 L 100,40 M 0,50 L 100,50 M 0,60 L 100,60 M 0,70 L 100,70 M 0,80 L 100,80 M 0,90 L 100,90" stroke="rgba(99, 102, 241, 0.08)" strokeWidth="0.5" />
+                                                
+                                                {/* Developer Silhouette */}
+                                                <circle cx="50" cy="40" r="16" fill="url(#avatarGrad)" opacity="0.95" />
+                                                <path d="M22,82 C22,66 32,58 50,58 C68,58 78,66 78,82 Z" fill="url(#avatarGrad)" opacity="0.95" />
+                                                
+                                                {/* Cyber Tech Lines */}
+                                                <path d="M 50,24 L 50,56 M 34,50 L 66,50" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" />
+                                            </g>
+                                        </svg>
+                                        <div className="status-indicator" title="Available for new opportunities">
+                                            <span className="status-dot"></span>
+                                            <span className="status-pulse"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="profile-info-text">
+                                    <h3 className="profile-name">Dhawal Deolasi</h3>
+                                    <div className="profile-role-badge">Fullstack Developer</div>
+                                    <span className="profile-availability">Available for Work</span>
+                                </div>
+                            </div>
+                            
+                            <div className="profile-stats">
+                                <div className="p-stat-item">
+                                    <span className="p-stat-num">4+</span>
+                                    <span className="p-stat-label">Years Exp</span>
+                                </div>
+                                <div className="p-stat-item">
+                                    <span className="p-stat-num">10+</span>
+                                    <span className="p-stat-label">Projects</span>
+                                </div>
+                                <div className="p-stat-item">
+                                    <span className="p-stat-num">Indore</span>
+                                    <span className="p-stat-label">Location</span>
+                                </div>
+                            </div>
+
+                            <div className="profile-tech-section">
+                                <h4 className="tech-title">Core Expertise</h4>
+                                <div className="tech-tag-grid">
+                                    <span className="tech-tag-badge"><span className="tech-dot react"></span>React</span>
+                                    <span className="tech-tag-badge"><span className="tech-dot next"></span>Next.js</span>
+                                    <span className="tech-tag-badge"><span className="tech-dot ts"></span>TypeScript</span>
+                                    <span className="tech-tag-badge"><span className="tech-dot ws"></span>WebSockets</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#about" className="scroll-down-btn" aria-label="Scroll Down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+            </a>
+        </section>
+    );
+};
