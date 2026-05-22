@@ -19,6 +19,37 @@ export const About: React.FC = () => {
                         <p>
                             I specialize in modular folder structures, state-management frameworks (Zustand, Redux, Redux Saga), real-time streaming data, and securing systems with Keycloak and Role-Based Access Controls (RBAC).
                         </p>
+
+                        <div className="about-details-grid">
+                            <div className="about-detail-item">
+                                <span className="about-detail-label">Role</span>
+                                <span className="about-detail-value">Fullstack Developer</span>
+                            </div>
+                            <div className="about-detail-item">
+                                <span className="about-detail-label">Current</span>
+                                <span className="about-detail-value">Bigul (Bonanza Portfolio Ltd.)</span>
+                            </div>
+                            <div className="about-detail-item">
+                                <span className="about-detail-label">Location</span>
+                                <span className="about-detail-value">Indore, India</span>
+                            </div>
+                            <div className="about-detail-item">
+                                <span className="about-detail-label">Email</span>
+                                <span className="about-detail-value">
+                                    <a href="mailto:dhawaldeolasi04@gmail.com" className="link-hover">
+                                        dhawaldeolasi04@gmail.com
+                                    </a>
+                                </span>
+                            </div>
+                            <div className="about-detail-item">
+                                <span className="about-detail-label">Phone</span>
+                                <span className="about-detail-value">
+                                    <a href="tel:+918421158336" className="link-hover">
+                                        +91 8421158336
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
                         
                         <div className="metrics-grid">
                             <div className="metric-card">
@@ -41,39 +72,6 @@ export const About: React.FC = () => {
                             <div className="about-photo-frame">
                                 <img src={dhawalPhoto} alt="Dhawal Deolasi" className="about-photo" />
                             </div>
-                        </div>
-                        <div className="info-card">
-                            <h4>Quick Details</h4>
-                            <ul className="info-list">
-                                <li>
-                                    <span className="info-label">Role:</span>
-                                    <span className="info-value">Fullstack Developer</span>
-                                </li>
-                                <li>
-                                    <span className="info-label">Current:</span>
-                                    <span className="info-value">Bigul (Bonanza Portfolio Ltd.)</span>
-                                </li>
-                                <li>
-                                    <span className="info-label">Location:</span>
-                                    <span className="info-value">Indore, India</span>
-                                </li>
-                                <li>
-                                    <span className="info-label">Email:</span>
-                                    <span className="info-value">
-                                        <a href="mailto:dhawaldeolasi04@gmail.com" className="link-hover">
-                                            dhawaldeolasi04@gmail.com
-                                        </a>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="info-label">Phone:</span>
-                                    <span className="info-value">
-                                        <a href="tel:+918421158336" className="link-hover">
-                                            +91 8421158336
-                                        </a>
-                                    </span>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
