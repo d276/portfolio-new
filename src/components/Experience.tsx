@@ -58,44 +58,51 @@ export const Experience: React.FC = () => {
     ];
 
     return (
-        <section id="experience" className="experience section-padding">
-            <div className="container">
-                <div className="section-title-wrapper">
-                    <span className="subtitle-badge">03. Career Timeline</span>
-                    <h2 className="section-title">Professional Experience</h2>
+        <section id="experience" className="container">
+            <div className="section-header">
+                <div className="section-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="url(#exp-gradient)" strokeWidth="1.5" viewBox="0 0 24 24">
+                        <defs>
+                            <linearGradient id="exp-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="var(--brand-pink)" />
+                                <stop offset="100%" stopColor="var(--brand-purple)" />
+                            </linearGradient>
+                        </defs>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+                    </svg>
                 </div>
-                
-                <div className="timeline">
-                    {experienceData.map((item, index) => {
-                        const revealClass = index % 2 === 0 ? 'reveal-left' : 'reveal-right';
-                        return (
-                            <div key={index} className={`timeline-item reveal ${revealClass} active`}>
-                                <div className="timeline-badge">
-                                    <span className="timeline-dot"></span>
-                                </div>
-                                <div className="timeline-card">
-                                    <div className="timeline-header">
-                                        <span className="timeline-date">{item.date}</span>
-                                        <h3 className="timeline-role">{item.role}</h3>
-                                        <h4 className="timeline-company">
-                                            {item.company} <span className="location">| {item.location}</span>
-                                        </h4>
-                                    </div>
-                                    <div className="timeline-body">
-                                        {item.projectInfo && (
-                                            <p className="timeline-project-info">{item.projectInfo}</p>
-                                        )}
-                                        <ul>
-                                            {item.bullets.map((bullet, bulletIdx) => (
-                                                <li key={bulletIdx}>{bullet}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
+                <h3 className="section-heading-title">
+                    Work Experience
+                </h3>
+            </div>
+
+            <div style={{ marginTop: '2.5rem' }}>
+                {experienceData.map((item, index) => (
+                    <div key={index} className="experience-item">
+                        <div className="exp-left">
+                            <div className="exp-role">{item.role}</div>
+                            <div className="font-serif-italic exp-company" style={{ color: 'var(--text-muted)' }}>
+                                {item.company}
                             </div>
-                        );
-                    })}
-                </div>
+                            <div className="exp-timeline-wrapper" style={{ marginTop: '1.5rem' }}>
+                                <div className="exp-node-dot"></div>
+                                <div className="exp-timeline-text">{item.date}</div>
+                            </div>
+                        </div>
+                        <div className="exp-right">
+                            {item.projectInfo && (
+                                <p style={{ fontWeight: 600, color: 'var(--text-primary)', fontSize: '0.95rem' }}>
+                                    {item.projectInfo}
+                                </p>
+                            )}
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                                {item.bullets.map((bullet, bulletIdx) => (
+                                    <p key={bulletIdx}>{bullet}</p>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
         </section>
     );

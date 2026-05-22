@@ -4,13 +4,17 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Skills } from './components/Skills';
-import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
+import { Banner } from './components/Banner';
+import { Experience } from './components/Experience';
+import { Achievements } from './components/Achievements';
+import { Highlights } from './components/Highlights';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
 
 import './styles/main.css';
+
 
 const App: React.FC = () => {
     // 1. Theme Configuration
@@ -93,8 +97,11 @@ const App: React.FC = () => {
                 <Hero />
                 <About />
                 <Skills />
-                <Experience />
                 <Projects />
+                <Banner />
+                <Experience />
+                <Achievements />
+                <Highlights />
                 <Contact />
             </main>
             <Footer />
