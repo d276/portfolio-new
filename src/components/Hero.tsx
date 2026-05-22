@@ -1,4 +1,5 @@
 import React from 'react';
+import dhawalPhoto from '../assets/dhawal.jpg';
 
 export const Hero: React.FC = () => {
     return (
@@ -39,31 +40,7 @@ export const Hero: React.FC = () => {
                             <div className="profile-header">
                                 <div className="avatar-container">
                                     <div className="avatar-wrapper">
-                                        <svg className="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                            <defs>
-                                                <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                    <stop offset="0%" stopColor="var(--accent-primary)" />
-                                                    <stop offset="100%" stopColor="var(--accent-secondary)" />
-                                                </linearGradient>
-                                                <clipPath id="avatarClip">
-                                                    <circle cx="50" cy="50" r="48" />
-                                                </clipPath>
-                                            </defs>
-                                            <circle cx="50" cy="50" r="48" fill="none" stroke="url(#avatarGrad)" strokeWidth="2" />
-                                            <g clipPath="url(#avatarClip)">
-                                                <circle cx="50" cy="50" r="45" fill="rgba(10, 15, 29, 0.6)" />
-                                                {/* Cyber Grid background */}
-                                                <path d="M 10,0 L 10,100 M 20,0 L 20,100 M 30,0 L 30,100 M 40,0 L 40,100 M 50,0 L 50,100 M 60,0 L 60,100 M 70,0 L 70,100 M 80,0 L 80,100 M 90,0 L 90,100" stroke="rgba(99, 102, 241, 0.08)" strokeWidth="0.5" />
-                                                <path d="M 0,10 L 100,10 M 0,20 L 100,20 M 0,30 L 100,30 M 0,40 L 100,40 M 0,50 L 100,50 M 0,60 L 100,60 M 0,70 L 100,70 M 0,80 L 100,80 M 0,90 L 100,90" stroke="rgba(99, 102, 241, 0.08)" strokeWidth="0.5" />
-                                                
-                                                {/* Developer Silhouette */}
-                                                <circle cx="50" cy="40" r="16" fill="url(#avatarGrad)" opacity="0.95" />
-                                                <path d="M22,82 C22,66 32,58 50,58 C68,58 78,66 78,82 Z" fill="url(#avatarGrad)" opacity="0.95" />
-                                                
-                                                {/* Cyber Tech Lines */}
-                                                <path d="M 50,24 L 50,56 M 34,50 L 66,50" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" />
-                                            </g>
-                                        </svg>
+                                        <img src={dhawalPhoto} alt="Dhawal Deolasi" className="avatar-img" />
                                         <div className="status-indicator" title="Available for new opportunities">
                                             <span className="status-dot"></span>
                                             <span className="status-pulse"></span>

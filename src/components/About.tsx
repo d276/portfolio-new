@@ -1,4 +1,5 @@
 import React from 'react';
+import dhawalPhoto from '../assets/dhawal.jpg';
 
 export const About: React.FC = () => {
     return (
@@ -36,6 +37,11 @@ export const About: React.FC = () => {
                     </div>
                     
                     <div className="about-info-panel reveal-right active">
+                        <div className="about-photo-wrapper">
+                            <div className="about-photo-frame">
+                                <img src={dhawalPhoto} alt="Dhawal Deolasi" className="about-photo" />
+                            </div>
+                        </div>
                         <div className="info-card">
                             <h4>Quick Details</h4>
                             <ul className="info-list">
